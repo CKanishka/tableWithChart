@@ -3,13 +3,14 @@ import './App.css';
 import Table from "./components/Table";
 import ChartHistogram from "./components/ChartHistogram";
 import { HashRouter, Switch, Route } from "react-router-dom";
+const url = process.env.NODE_ENV==="production"?"":"http://localhost:5000"
 class App extends React.Component {
   
   state = {
       data:[]
   }
   componentDidMount(){
-    fetch("/getdata")
+    fetch(`${url}/getdata`)
       .then((res)=>res.json())
       .then((res)=>this.setState({data:res.data}))
   }
