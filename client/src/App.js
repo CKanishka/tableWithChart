@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Table from "./components/Table";
 import ChartHistogram from "./components/ChartHistogram";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 class App extends React.Component {
   
   state = {
@@ -16,12 +16,12 @@ class App extends React.Component {
   render(){
     const {data} = this.state
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Switch>
                 <Route exact path='/home' render={(routeParams)=><Table headings={["Concept Name","Type","Unique Values","Missing Values"]} data={data} {...routeParams}/> } />
                 <Route path='/chart' render={(routeParams)=><ChartHistogram data={data} {...routeParams}/> } />
             </Switch>
-        </BrowserRouter>
+        </HashRouter>
       );
   }
 }
