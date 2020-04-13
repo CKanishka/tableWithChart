@@ -7,7 +7,7 @@ const renderTableData = (data) => {
         <tr key={row["cid"]}>
             {cols.map((col,index)=> {
                 if(col==="conceptName")
-                    return (<td key={index}><a href={`/chart?cid=${row["cid"]}`}>{row[col]}</a></td>)
+                    return (<td key={index}><a href={`/#/chart?cid=${row["cid"]}`}>{row[col]}</a></td>)
                 return (
                     <td key={index}>{row[col]}</td>
                     )

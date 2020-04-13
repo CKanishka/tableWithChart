@@ -48,7 +48,9 @@ const ChartHistogram = (props) => {
         layout={{
           bargap: 0.2,
           showlegend: false,
-          title: title
+          title: title,
+          xaxis: {title: "Value"}, 
+          yaxis: {title: "Count"}
         }}
         config={{
             displayModeBar: false
