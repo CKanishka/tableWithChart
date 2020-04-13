@@ -1,6 +1,6 @@
 import React from "react";
-import Plot from "react-plotly.js";
-
+//import Plot from "react-plotly.js";
+const Plot = React.lazy(() => import("react-plotly.js"));
 const numberOfDecimals = (value) => {
     if (Math.floor(value) !== value)
         return value.toString().split(".")[1].length || 0;
@@ -42,6 +42,7 @@ const ChartHistogram = (props) => {
         }
     })
     return (
+        <React.Suspense fallback={<div>Loading...</div>}>
         <Plot
         data={chartData}
         layout={{
@@ -53,6 +54,7 @@ const ChartHistogram = (props) => {
             displayModeBar: false
         }}
       />
+      </React.Suspense>
     )
 }
 
