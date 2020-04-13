@@ -9,7 +9,7 @@ class App extends React.Component {
       data:[]
   }
   componentDidMount(){
-    fetch("http://localhost:5000/getdata")
+    fetch("/getdata")
       .then((res)=>res.json())
       .then((res)=>this.setState({data:res.data}))
   }
