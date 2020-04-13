@@ -19,9 +19,10 @@ const roundOff = (values) => {
     return newvalues
 }
 const ChartHistogram = (props) => {
+    let id = props.location.hash
     let chartData = [], title=""
      props.data.forEach((item)=>{
-        if(item.cid===props.id){
+        if(item.cid===id){
             chartData =  [{
                 x: roundOff(Object.keys(item.freqCount || item.graph)),
                 y: Object.values(item.freqCount || item.graph),
@@ -40,7 +41,6 @@ const ChartHistogram = (props) => {
             title = item.conceptName  
         }
     })
-    console.log(chartData)
     return (
         <Plot
         data={chartData}

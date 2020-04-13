@@ -1,8 +1,5 @@
-.App {
-  text-align: center;
-}
 
-.App-container {
+body {
   background: rgb(255,121,25);
   background: linear-gradient(90deg, rgba(255,121,25,1) 32%, rgba(246,210,184,1) 100%);
   min-height: 100vh;
