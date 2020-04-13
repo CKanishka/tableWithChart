@@ -1,7 +1,7 @@
 const express=require('express');
 const bodyParser=require('body-parser');
 const cors = require('cors');
-
+const path = require('path');
 const app=express(); //initializing express
 
 const routes=require('./routes/api')   //importing the route file
